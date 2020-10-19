@@ -7,7 +7,7 @@ commit_msg_filepath = sys.argv[1]
 branch = check_output(['git', 'symbolic-ref', '--short', 'HEAD']).strip() 
 print("commit-msg: On branch '%s'" % branch) 
 # Check the commit message if we're on an issue branch 
-if branch.startswith(b'issue-'):
+if branch.startswith(b'issue '):
 	print("commit-msg: Oh hey, it's an issue branch.")
 	result = re.match('issue-(.*)', branch)
 	issue_number = result.group(1) 
